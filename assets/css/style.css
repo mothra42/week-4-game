@@ -1,0 +1,15 @@
+body {
+	box-sizing: border-box;
+	overflow: auto;
+	background: url(../images/candyKingdom.gif);
+	background-size: cover;
+}
+
+header {
+	color: #EB0600;
+}
+.char {
+	border: 3px solid #F48C83;
+	height: 150px;
+	width: 200px;
+}

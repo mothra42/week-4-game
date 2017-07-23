@@ -1,0 +1,12 @@
+Need a character object. 
+
+each character object should have the following properties:
+HP,Attack,counter attack, image(maybe)
+
+I need a function that does the attacking. 
+that function should take in an attack value, counter attack value, and health for both characters involved
+it will calculate the proper steps
+
+I need another function designed to level up the player's attack power. (potentially a nested function.)
+
+I need click events for each character and the attack button. those click events need to be context sensitive to what the player intends for them to do. 
