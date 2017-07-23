@@ -35,10 +35,22 @@ function initialize ()
 	$("#finn").show();
 	$("#marcy").show();
 	$("#lich").show();
+	$("#iceKing").children(".health").text(120);
+	$("#finn").children(".health").text(130);
+	$("#marcy").children(".health").text(150);
+	$("#lich").children(".health").text(180);
+	$("#iceKing").css("background-color", "#9700B2");
+	$("#finn").css("background-color", "#9700B2");
+	$("#marcy").css("background-color", "#9700B2");
+	$("#lich").css("background-color", "#9700B2");
 	$("#character").append($("#iceKing"));
 	$("#character").append($("#finn"));
 	$("#character").append($("#marcy"));
 	$("#character").append($("#lich"));
+	$("#choose").text("Choose Your Character");
+	$("#combat").hide();
+	$("#defender").hide();
+	$(".text").hide();
 	charChosen = false;
 	enemyChosen = false;
 	playerDead = false;
@@ -92,6 +104,13 @@ function attack (player,cpu)
 	cpu.hp = cpu.hp - player.pow;
 	player.hp = player.hp - cpu.counter;
 
+	//code that displays new health text on DOM
+	$("#"+player.name).children(".health").text(player.hp);
+	$("#"+cpu.name).children(".health").text(cpu.hp);
+	$(".text").show();
+	$("#playerAttack").text("You attacked " + $("#"+cpu.name).children(".name").text() + " for " + player.pow + " damage!");
+	$("#enemyAttack").text($("#"+cpu.name).children(".name").text() + " attacked you for " + cpu.counter + " damage!");
+
 	//if the player is still alive after attack, level up!
 	if(player.hp > 0)
 	{
@@ -101,16 +120,22 @@ function attack (player,cpu)
 	{
 		$("#reset").show();
 		playerDead = true;
+		$("#enemyAttack").hide();
+		$("#playerAttack").text("You have been defeated by " + $("#"+cpu.name).children(".name").text() + ". Press restart to try again.");
 	}
 	if(cpu.hp <= 0)
 	{
 		cpu.isDead = true;
 		$("#"+cpu.name).hide();
 		enemyChosen = false;
+		$("#enemyAttack").hide();
+		$("#playerAttack").text("You have defeated " + $("#"+cpu.name).children(".name").text() + "! Choose a new combatant!");
 	}
 	//checks that all cpu's are dead
 	if(coms[0].isDead && coms[1].isDead && coms[2].isDead)
 	{
+		$("#enemyAttack").hide();
+		$("#playerAttack").text("You have defeated all combatants. You reign supreme! Press restart to play again.");
 		$("#reset").show();
 	}
 }
@@ -127,17 +152,25 @@ $(document).ready(function()
 	{
 		if(!charChosen && !playerDead)
 		{	
+			//changes text to Your Character
+			$("#choose").text("Your Character");
 			//creates player character
 			player = new character($(this).attr("id"), $(this).attr("hp"), $(this).attr("pow"));
-			//set to true, so player cannot select new character
+			//set charChosen to true, so player cannot select new character
 			charChosen = true;
 			//function creates cpu objects.
 			setCpu(player);
 			//moves enemies to proper div
 			for (var i = 0; i < coms.length; i++) 
 			{
+				$("#"+coms[i].name).css("background-color", "#3BB969");
 				move("#enemy",coms[i]);
 			}
+
+			//shows text once players choice has been made. 
+			$("#combat").show();
+			$("#defender").show();
+
 			//need to change style.
 		}
 		//Logic for choosing enemy player
@@ -151,6 +184,7 @@ $(document).ready(function()
 				if(this.id === coms[i].name)
 				{
 					move("#currentEnemy",coms[i]);
+					$("#"+coms[i].name).css("background-color","#FF410F");
 					currentEnemy = coms[i];
 					enemyChosen = true;
 					//change style too
@@ -177,11 +211,9 @@ $(document).ready(function()
 	{
 		initialize();
 	});
-
-	//TOMORROW ADD TEXT STUFF AND CSS, see if I can add custom background gifs and sounds for each attack. 
 });
 
-
+//ASK ABOUT COMPETING VALUES, there are cases when the player dies, but kills the combatant on the same move, defaults to choose new combatant.
 
 
 

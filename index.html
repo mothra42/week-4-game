@@ -21,14 +21,32 @@
 		<div class="row">
 			<!-- character select/where player character lives -->
 			<div class="col-lg-12" id="character">
-			<img class="char" id="iceKing" pow="6" hp="100" alt="Ice King" src="assets/images/iceKing.png"/>
-			<img class="char" id="finn" pow="8" hp="120" alt="Finn" src="assets/images/finn.jpg"/>
-			<img class="char" id="marcy" pow="10" hp="150" alt="Marceline" src ="assets/images/marcy.jpg"/>
-			<img class="char" id="lich" pow="12" hp="180" alt="Lich" src ="assets/images/lich.jpg"/>
+				<h3 id="choose">Choose Your Character</h3>
+				<div class="char" id="iceKing" pow="6" hp="120">
+					<p class="name">Ice King</p>
+					<img class="img" alt="Ice King" src="assets/images/iceKing.png"/>
+					<p class="health">100</p>
+				</div>
+				<div class="char" id="finn" pow="8" hp="130" >
+					<p class="name">Finn The Human</p>
+					<img class="img" alt="Finn" src="assets/images/finn.jpg"/>
+					<p class="health">120</p>
+				</div>
+				<div class="char" id="marcy" pow="10" hp="150">
+					<p class="name">Marceline</p>
+					<img class="img" alt="Marceline" src ="assets/images/marcy.jpg"/>
+					<p class="health">150</p>
+				</div>
+				<div class="char" id="lich" pow="12" hp="180">
+					<p class="name">The Lich</p>
+					<img class="img" alt="Lich" src ="assets/images/lich.jpg"/>
+					<p class="health">180</p>
+				</div>
 			</div>
 		</div>	
 		<!-- row 2 -->
 		<div class="row">
+			<h3 id="combat">Choose Your Combatant</h3>
 			<!-- Where enemies wait to be attacked -->
 			<div class="col-lg-12" id="enemy">
 			</div>
@@ -41,6 +59,7 @@
 			</div>
 		</div>
 		<div class="row">
+			<h3 id="defender">Defender</h3>
 			<!--  current enemy -->
 			<div class="col-lg-12" id="currentEnemy">
 			</div>
@@ -48,6 +67,8 @@
 		<div class="row">
 			<!--  restart button and diaglogue -->
 			<div class="col-lg-12" id="diaglogue">
+			<p class="text" id="playerAttack"></p>
+			<p class="text" id="enemyAttack"></p>
 			<button id="reset" class="btn-md btn-default btn-warning">Restart</button>
 			</div>
 		</div>

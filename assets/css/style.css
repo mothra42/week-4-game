@@ -7,9 +7,45 @@ body {
 
 header {
 	color: #EB0600;
+	float: right;
+	margin-right: 10px;
 }
+
+.img {
+	height: 115px;
+	width: 160px;
+	z-index: 99;
+}
+
+h3 {
+	margin-top: 0px;
+}
+
 .char {
-	border: 3px solid #F48C83;
-	height: 150px;
-	width: 200px;
+	float: left;
+	padding: 15px;
+	border: 4px solid #F48C83;
+	background-color: #9700B2;
+	position: relative;
+}
+
+.char .name {
+	position: absolute;
+	text-align: center;
+	top: -3px;
+	width: 100%;
+	left: 0px;
+}
+
+.char .health {
+	position: absolute;
+	text-align: center;
+	bottom: -12.5px;
+	width: 100%;
+	left: 0px;
+}
+
+.text {
+	margin: 0px;
+	color: #CCB43D;
 }
