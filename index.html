@@ -5,6 +5,8 @@
 	<title>Game</title>
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- font -->
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -20,26 +22,26 @@
 		<!-- row 1 -->
 		<div class="row">
 			<!-- character select/where player character lives -->
-			<div class="col-lg-12" id="character">
+			<div class="col-sm-12" id="character">
 				<h3 id="choose">Choose Your Character</h3>
 				<div class="char" id="iceKing" pow="6" hp="120">
 					<p class="name">Ice King</p>
-					<img class="img" alt="Ice King" src="assets/images/iceKing.png"/>
-					<p class="health">100</p>
+					<img class="img img-fluid" alt="Ice King" src="assets/images/iceKing.png"/>
+					<p class="health">120</p>
 				</div>
 				<div class="char" id="finn" pow="8" hp="130" >
-					<p class="name">Finn The Human</p>
-					<img class="img" alt="Finn" src="assets/images/finn.jpg"/>
-					<p class="health">120</p>
+					<p class="name">Finn</p>
+					<img class="img img-fluid" alt="Finn" src="assets/images/finn.jpg"/>
+					<p class="health">130</p>
 				</div>
 				<div class="char" id="marcy" pow="10" hp="150">
 					<p class="name">Marceline</p>
-					<img class="img" alt="Marceline" src ="assets/images/marcy.jpg"/>
+					<img class="img img-fluid" alt="Marceline" src ="assets/images/marcy.jpg"/>
 					<p class="health">150</p>
 				</div>
 				<div class="char" id="lich" pow="12" hp="180">
 					<p class="name">The Lich</p>
-					<img class="img" alt="Lich" src ="assets/images/lich.jpg"/>
+					<img class="img img-fluid" alt="Lich" src ="assets/images/lich.jpg"/>
 					<p class="health">180</p>
 				</div>
 			</div>
@@ -48,25 +50,25 @@
 		<div class="row">
 			<h3 id="combat">Choose Your Combatant</h3>
 			<!-- Where enemies wait to be attacked -->
-			<div class="col-lg-12" id="enemy">
+			<div class="col-sm-12" id="enemy">
 			</div>
 		</div>
 		<!-- row 3 -->
 		<div class="row">
 			<!-- where fight button lives -->
-			<div class="col-lg-12" id="fight">
+			<div class="col-sm-12" id="fight">
 			<button id="fight" class="btn-md btn-default btn-warning">Fight</button>
 			</div>
 		</div>
 		<div class="row">
 			<h3 id="defender">Defender</h3>
 			<!--  current enemy -->
-			<div class="col-lg-12" id="currentEnemy">
+			<div class="col-sm-12" id="currentEnemy">
 			</div>
 		</div>
 		<div class="row">
 			<!--  restart button and diaglogue -->
-			<div class="col-lg-12" id="diaglogue">
+			<div class="col-sm-12" id="diaglogue">
 			<p class="text" id="playerAttack"></p>
 			<p class="text" id="enemyAttack"></p>
 			<button id="reset" class="btn-md btn-default btn-warning">Restart</button>

@@ -22,6 +22,7 @@ var playerDead;
 function character (first, health, basePower)
 {
 	this.name = first;
+	this.baseHp = parseInt(health);
 	this.hp = parseInt(health);
 	this.pow = parseInt(basePower);
 	this.counter = parseInt(basePower);
@@ -30,31 +31,22 @@ function character (first, health, basePower)
 
 //function to initialize cpu objects for later use in code. need them to be defined as objects. 
 function initialize ()
-{
-	$("#iceKing").show();
-	$("#finn").show();
-	$("#marcy").show();
-	$("#lich").show();
-	$("#iceKing").children(".health").text(120);
-	$("#finn").children(".health").text(130);
-	$("#marcy").children(".health").text(150);
-	$("#lich").children(".health").text(180);
-	$("#iceKing").css("background-color", "#9700B2");
-	$("#finn").css("background-color", "#9700B2");
-	$("#marcy").css("background-color", "#9700B2");
-	$("#lich").css("background-color", "#9700B2");
-	$("#character").append($("#iceKing"));
-	$("#character").append($("#finn"));
-	$("#character").append($("#marcy"));
-	$("#character").append($("#lich"));
+{	
+	$(".char").each(function()
+	{
+		$(this).children(".health").text($(this).attr("hp"));
+		$(this).css("background-color", "#9700B2");
+		$("#character").append($(this));
+	});
 	$("#choose").text("Choose Your Character");
 	$("#combat").hide();
 	$("#defender").hide();
 	$(".text").hide();
+	$(".char").show();
+	$("#reset").hide();
 	charChosen = false;
 	enemyChosen = false;
 	playerDead = false;
-	$("#reset").hide();
 	for (var i = 0; i < coms.length; i++) 
 	{
 		coms[i] = new character("",0,0);

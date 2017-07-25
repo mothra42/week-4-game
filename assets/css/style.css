@@ -3,6 +3,7 @@ body {
 	overflow: auto;
 	background: url(../images/candyKingdom.gif);
 	background-size: cover;
+	font-family: "Press Start 2P", cursive;
 }
 
 header {
@@ -19,6 +20,7 @@ header {
 
 h3 {
 	margin-top: 0px;
+	color: #D34E7D;
 }
 
 .char {
@@ -27,6 +29,8 @@ h3 {
 	border: 4px solid #F48C83;
 	background-color: #9700B2;
 	position: relative;
+	margin-left: 2px;
+	margin-right: 2px;
 }
 
 .char .name {
